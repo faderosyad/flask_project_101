@@ -19,7 +19,10 @@ def hello_world():
     textToOut = "Hello World! \n Today date is " + date 
     return textToOut
 
-#trying to push to developing branch
+@app.route('/iseng')
+def testing():
+    name = "Fade Khalifah Rosyad"
+    return name
 
 if __name__ == '__main__':
     app.run(debug = True, port= 2000)
