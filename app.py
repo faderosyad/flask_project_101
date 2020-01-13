@@ -8,10 +8,10 @@ import requests, json
 from flask import Flask, render_template, request, json
 from datetime import datetime
 
+app = Flask(__name__)
+
 def getTimestamp():
     return datetime.now().strftime("%d-%m-%Y %H:%M:%S")
-
-app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
