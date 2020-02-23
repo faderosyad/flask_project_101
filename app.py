@@ -11,7 +11,9 @@ from datetime import datetime, timedelta
 app = Flask(__name__)
 
 def getTimestamp():
-    return datetime.now().strftime("%d-%m-%Y %H:%M:%S") + timedelta(hours=7)
+    nowDateTime = datetime.now() + timedelta(hours=7)
+    formatDateTime = nowDateTime.strftime("%d-%m-%Y %H:%M:%S")
+    return formatDateTime
 
 @app.route('/')
 def hello_world():
