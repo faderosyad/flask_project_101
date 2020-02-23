@@ -19,7 +19,7 @@ def getTimestamp():
 def hello_world():
     dateTime = getTimestamp()
     helloMessage = "Hello World! \n Today date is "
-    return render_template('fronpage.html', helloMessage = helloMessage, dateTime = dateTime)
+    return render_template('frontpage.html', helloMessage = helloMessage, dateTime = dateTime)
 
 @app.route('/iseng')
 def testing():
