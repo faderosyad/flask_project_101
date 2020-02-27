@@ -21,10 +21,13 @@ def hello_world():
     helloMessage = "Hello World! \n Today date is "
     return render_template('frontpage.html', helloMessage = helloMessage, dateTime = dateTime)
 
-@app.route('/iseng')
+@app.route('/about_me')
 def testing():
     name = "Fade Khalifah Rosyad"
-    return name
+    jobs = "Software Development Engineer"
+    linkedin = "https://www.linkedin.com/in/faderosyad/"
+    github = "https://github.com/faderosyad"
+    return render_template('aboutme.html', name = name, jobs = jobs, linkedin = linkedin, github = github)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug = True, port= 2323)
