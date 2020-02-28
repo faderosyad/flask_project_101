@@ -1,8 +1,8 @@
-#Fade Khalifah Rosyad
-#faderosyad@gmail.com
-#Started: 13 January 2020
+# Fade Khalifah Rosyad
+# faderosyad@gmail.com
+# Started: 13 January 2020
 
-#Main script for Flask Web Application
+# Main script for Flask Web Application
 
 import requests, json
 from flask import Flask, render_template, request, json
@@ -16,13 +16,13 @@ def getTimestamp():
     return formatDateTime
 
 @app.route('/')
-def hello_world():
+def frontpage():
     dateTime = getTimestamp()
     helloMessage = "Hello World! \n Today date is "
     return render_template('frontpage.html', helloMessage = helloMessage, dateTime = dateTime)
 
 @app.route('/about_me')
-def testing():
+def about_me():
     name = "Fade Khalifah Rosyad"
     jobs = "Software Development Engineer"
     linkedin = "https://www.linkedin.com/in/faderosyad/"
