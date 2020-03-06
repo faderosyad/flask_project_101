@@ -16,7 +16,8 @@ This project uses a number of open source projects to work properly:
 
 ### Todos
 
-[x] implement flask for backend
-[x] implement docker for containerization
-[ ] implement MongoDB as database
-[ ] implement React Native for front end
+* implement flask for backend
+* implement docker for containerization
+* implement MongoDB as database
+* implement React Native for front end
+* create CI/CD pipeline
