@@ -5,10 +5,19 @@
 # Main script for Flask Web Application
 
 import requests, json
-from flask import Flask, render_template, request, json
+from flask import Flask, render_template, request, json, Response
 from datetime import datetime, timedelta
 
+from database.db import initialize_db
+from database.models import Movie
+
 app = Flask(__name__)
+
+app.config['MONGIDB_SETTINGS'] = {
+    'host': 'mongodb://localhost/movie-bag'
+    }
+
+initialize_db(app)
 
 def getTimestamp():
     nowDateTime = datetime.now() + timedelta(hours=7)
