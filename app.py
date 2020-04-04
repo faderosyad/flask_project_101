@@ -5,7 +5,7 @@
 # Main script for Flask Web Application
 
 import requests, json
-from flask import Flask, render_template, request, json, Response
+from flask import Flask, render_template, request, json, Response, jsonify
 from datetime import datetime, timedelta
 
 from database.db import initialize_db
@@ -44,9 +44,8 @@ def delete_movie(id):
 
 @app.route('/movies/<id>')
 def get_movie(id):
-    movies = Movies.objects.get(id = id).to_json()
+    movies = Movie.objects.get(id = id).to_json()
     return Response(movies, mimetype="application/json", status=200)
-
 
 def getTimestamp():
     nowDateTime = datetime.now() + timedelta(hours=7)
