@@ -1,5 +1,6 @@
 from flask import Blueprint, Response, request
 from database.models import Movie
+from flask_restful import Resource
 
 movies = Blueprint('movies', __name__)
 
