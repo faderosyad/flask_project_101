@@ -4,14 +4,13 @@
 
 # Main script for Flask Web Application
 
-import requests, json
-from flask import Flask, render_template, request, json, Response, jsonify
+from flask import Flask, render_template, request, Response
 from datetime import datetime, timedelta
 
-from resource.movie import movies
+# from resource.movie import movies
 
-from database.db import initialize_db
-from database.models import Movie
+# from database.db import initialize_db
+# from database.models import Movie
 
 app = Flask(__name__)
 
@@ -19,8 +18,8 @@ app.config['MONGIDB_SETTINGS'] = {
     'host': 'mongodb://localhost/movie-bag'
     }
 
-initialize_db(app)
-app.register_blueprint(movies)
+# initialize_db(app)
+# app.register_blueprint(movies)
 
 def getTimestamp():
     nowDateTime = datetime.now() + timedelta(hours=7)
