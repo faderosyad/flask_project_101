@@ -10,14 +10,7 @@ Create by: Fade Khalifah Rosyad
 This project uses a number of open source projects to work properly:
 
 * Flask - for backend
-* React Native - for frontend *soon to be
 * Docker - for containerization
-* MongoDB - for database *soon to be
 
 ### Todos
-
-- [x] implement flask for backend
-- [x] implement docker for containerization
-- [ ] implement MongoDB as database
-- [ ] implement React Native for front end
-- [ ] create CI/CD pipeline
+[] Start fresh, reorganize and repurpose this project
