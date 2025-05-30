@@ -47,9 +47,75 @@
             <a class="active">Fade Rosyad</a>
         </div>
 
-        <br>
-        <h3>{{helloMessage}}</h3>
-        <h1>{{dateTime}}</h1>
+        <div class="container text-center mt-4"> <!-- Added container, text-center and margin-top -->
+            <h3>{{helloMessage}}</h3>
+            <h1>{{dateTime}}</h1>
+            <p><a href="{{ url_for('main.about_me') }}" class="btn btn-primary">Go to About Me</a></p> <!-- Wrapped button in a <p> for better block behavior for centering -->
+        </div>
+
+        <hr style="margin-top: 20px; margin-bottom: 20px;">
+
+        <!-- Calculators Section -->
+        <div class="container mt-4">
+            <div class="row">
+                <!-- Simple Adder -->
+                <div class="col-md-4 mb-3">
+                    <h2>Simple Adder</h2>
+                    <form method="POST" action="{{ url_for('main.frontpage') }}">
+                        <div class="form-group">
+                            <label for="add_num1">Number 1:</label>
+                            <input type="number" step="any" class="form-control" id="add_num1" name="add_num1" placeholder="Enter first number" value="{{ request.form.get('add_num1', '') if request.form.get('action') == 'add' else '' }}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="add_num2">Number 2:</label>
+                            <input type="number" step="any" class="form-control" id="add_num2" name="add_num2" placeholder="Enter second number" value="{{ request.form.get('add_num2', '') if request.form.get('action') == 'add' else '' }}" required>
+                        </div>
+                        <button type="submit" name="action" value="add" class="btn btn-success">Add Numbers</button>
+                    </form>
+                    {% if addition_result is not none %}
+                        <p class="mt-3"><strong>Result:</strong> <span id="additionResult">{{ addition_result }}</span></p>
+                    {% endif %}
+                </div>
+
+                <!-- Simple Subtractor -->
+                <div class="col-md-4 mb-3">
+                    <h2>Simple Subtractor</h2>
+                    <form method="POST" action="{{ url_for('main.frontpage') }}">
+                        <div class="form-group">
+                            <label for="sub_num1">Number 1:</label>
+                            <input type="number" step="any" class="form-control" id="sub_num1" name="sub_num1" placeholder="Enter first number" value="{{ request.form.get('sub_num1', '') if request.form.get('action') == 'subtract' else '' }}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sub_num2">Number 2:</label>
+                            <input type="number" step="any" class="form-control" id="sub_num2" name="sub_num2" placeholder="Enter second number" value="{{ request.form.get('sub_num2', '') if request.form.get('action') == 'subtract' else '' }}" required>
+                        </div>
+                        <button type="submit" name="action" value="subtract" class="btn btn-info">Subtract Numbers</button>
+                    </form>
+                    {% if subtraction_result is not none %}
+                        <p class="mt-3"><strong>Result:</strong> <span id="subtractionResult">{{ subtraction_result }}</span></p>
+                    {% endif %}
+                </div>
+
+                <!-- Simple Multiplier -->
+                <div class="col-md-4 mb-3">
+                    <h2>Simple Multiplier</h2>
+                    <form method="POST" action="{{ url_for('main.frontpage') }}">
+                        <div class="form-group">
+                            <label for="mul_num1">Number 1:</label>
+                            <input type="number" step="any" class="form-control" id="mul_num1" name="mul_num1" placeholder="Enter first number" value="{{ request.form.get('mul_num1', '') if request.form.get('action') == 'multiply' else '' }}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="mul_num2">Number 2:</label>
+                            <input type="number" step="any" class="form-control" id="mul_num2" name="mul_num2" placeholder="Enter second number" value="{{ request.form.get('mul_num2', '') if request.form.get('action') == 'multiply' else '' }}" required>
+                        </div>
+                        <button type="submit" name="action" value="multiply" class="btn btn-warning">Multiply Numbers</button>
+                    </form>
+                    {% if multiplication_result is not none %}
+                        <p class="mt-3"><strong>Result:</strong> <span id="multiplicationResult">{{ multiplication_result }}</span></p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
 
     </body>
 </html>
