@@ -1,9 +1,7 @@
-FROM ubuntu:20.04
+FROM python:3.12-alpine
 
-MAINTAINER Fade Rosyad "faderosyad@gmail.com"
-
-RUN apt-get update -y && apt-get upgrade -y
-RUN apt-get install python3-dev python3-pip -y --fix-missing
+LABEL author="Fade Rosyad"
+LABEL email="faderosyad@gmail.com"
 
 COPY ./requirement.txt /app/requirement.txt
 
