@@ -1,22 +1,25 @@
 # Building Stage
-FROM python:3.12-alpine as builder
+FROM python:3.12-slim as builder
 
 LABEL author="Fade Rosyad"
 LABEL email="faderosyad@gmail.com"
 
 WORKDIR /build
-COPY . /build
+COPY . .
 
-RUN apk add binutils
+RUN apt-get update && apt-get install -y binutils
 RUN pip3 install -r requirement.txt
 
-RUN pyinstaller --onefile app.py --add-data "templates:templates" --name flaskweb
+# this experiment with multibuild python is kinda useless
+#RUN pyinstaller --onefile app.py --add-data "templates:templates" --name flaskweb
 
 # Deliver the Image
-FROM gcr.io/distroless/python3-debian13 as delivery
+#FROM debian:bookworm-slim as delivery
 
-WORKDIR /app
+#WORKDIR /app
 
-COPY --from=builder /build/dist/flaskweb .
+#COPY --from=builder /build/dist/flaskweb .
 
-ENTRYPOINT [ "./flaskweb" ]
+#RUN chmod +x flaskweb
+
+ENTRYPOINT [ "python3", "app.py" ]
