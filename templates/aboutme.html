@@ -1,22 +1,148 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Fade Rosyad Personal Project</title>
-        <!--Bootsrap 4 CDN-->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
-    <!--Fontawesome CDN-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Profile and professional experience of Fade Khalifah Rosyad, DevOps and Site Reliability Engineer.">
+    <title>Fade Khalifah Rosyad | DevOps Engineer</title>
+    <style>
+        :root { color-scheme: light; --ink: #172033; --muted: #667085; --line: #e5eaf1; --accent: #2364d2; --wash: #f4f7fb; }
+        * { box-sizing: border-box; }
+        body { margin: 0; background: var(--wash); color: var(--ink); font: 16px/1.65 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+        a { color: var(--accent); }
+        .topbar { background: #111c32; color: white; }
+        .topbar-inner { max-width: 1050px; margin: auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+        .brand { color: white; text-decoration: none; font-weight: 700; }
+        .back-link { color: #dbe7ff; text-decoration: none; }
+        .back-link:hover, .back-link:focus { text-decoration: underline; }
+        main { max-width: 1050px; margin: 36px auto; padding: 0 24px 56px; }
+        .hero { background: linear-gradient(130deg, #142440, #234b83); color: white; padding: clamp(28px, 6vw, 58px); border-radius: 20px; box-shadow: 0 16px 40px #152b4a1c; }
+        .eyebrow { color: #a9c9ff; text-transform: uppercase; letter-spacing: .13em; font-size: .78rem; font-weight: 750; }
+        h1 { font-size: clamp(2.1rem, 6vw, 3.5rem); line-height: 1.12; margin: 10px 0 4px; letter-spacing: -.04em; }
+        .role { font-size: 1.2rem; color: #d7e5ff; margin: 0 0 18px; }
+        .contact { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 20px 0 0; }
+        .contact a { color: white; }
+        .hero .intro { max-width: 800px; color: #e7eefb; margin-bottom: 0; }
+        .relocation { margin: 16px 0 0; color: #c8d8f3; }
+        .layout { display: grid; grid-template-columns: minmax(0, 1.75fr) minmax(240px, .85fr); gap: 24px; margin-top: 24px; align-items: start; }
+        .panel { background: white; border: 1px solid var(--line); border-radius: 16px; padding: 26px; box-shadow: 0 5px 18px #152b4a08; }
+        h2 { font-size: 1.35rem; margin: 0 0 20px; letter-spacing: -.02em; }
+        h3 { margin: 0; font-size: 1.08rem; }
+        .timeline { border-left: 2px solid #dce7f7; margin-left: 7px; padding-left: 22px; }
+        .job { position: relative; padding: 0 0 27px; }
+        .job:last-child { padding-bottom: 0; }
+        .job::before { content: ""; position: absolute; left: -29px; top: 8px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px #eaf1fc; }
+        .job-meta { color: var(--muted); font-size: .93rem; margin: 3px 0 10px; }
+        .job ul { padding-left: 20px; margin: 10px 0; }
+        li { padding-left: 2px; margin: 5px 0; }
+        .stack { margin-top: 10px; padding: 10px 12px; background: #f5f8fc; border-radius: 9px; color: #475467; font-size: .9rem; }
+        .stack strong { color: #24334d; }
+        .side { display: grid; gap: 20px; }
+        .side .panel { padding: 23px; }
+        .side h2 { margin-bottom: 12px; }
+        .credential-title { font-weight: 700; }
+        .subtle { color: var(--muted); margin: 3px 0; }
+        .topic-list { margin: 8px 0; }
+        footer { text-align: center; color: var(--muted); padding: 0 24px 28px; font-size: .9rem; }
+        @media (max-width: 760px) { main { margin-top: 20px; padding-inline: 16px; } .topbar-inner { padding-inline: 16px; } .layout { grid-template-columns: 1fr; } .panel { padding: 21px; } }
+        @media print { body { background: white; } .topbar, footer { display: none; } main { margin: 0 auto; padding: 12px; max-width: none; } .hero, .panel { box-shadow: none; break-inside: avoid; } .layout { grid-template-columns: 1.7fr .9fr; gap: 12px; } .panel { padding: 16px; } a { color: inherit; text-decoration: none; } }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <a class="brand" href="{{ url_for('main.frontpage') }}">Fade Rosyad</a>
+            <a class="back-link" href="{{ url_for('main.frontpage') }}">← Back to home</a>
+        </div>
+    </header>
 
-    <body>
-        <h3>{{name}}</h3>
-        <h1>{{jobs}}</h1>
+    <main>
+        <section class="hero" aria-labelledby="profile-name">
+            <div class="eyebrow">Professional profile</div>
+            <h1 id="profile-name">Fade Khalifah Rosyad</h1>
+            <p class="role">DevOps Engineer · Site Reliability Engineer</p>
+            <p class="intro">Accomplished and solutions-driven DevOps Engineer with over 4 years of experience building, automating, and optimizing cloud infrastructure across AWS and GCP. Proven track record in designing scalable, secure platforms using Kubernetes, Terraform, GitOps (ArgoCD), and service mesh (Istio) to support high-impact financial and enterprise applications. Skilled in cost optimization (up to 40% savings), regulatory compliance (ISO 27001 and Bank Indonesia Regulation), and enabling developer velocity through CI/CD automation. Adept at cross-functional collaboration and process improvement.</p>
+            <p class="relocation">Based in Bekasi, Jawa Barat, Indonesia · Open to relocation abroad and motivated to contribute in multicultural, fast-paced engineering environments.</p>
+            <div class="contact" aria-label="Contact and professional profiles">
+                <a href="mailto:faderosyad@gmail.com">faderosyad@gmail.com</a>
+                <a href="{{ linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="{{ github }}" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+        </section>
 
-        <p><a href="{{ linkedin }}" class="btn btn-info" target="_blank">LinkedIn Profile</a></p>
-        <p><a href="{{ github }}" class="btn btn-dark" target="_blank">GitHub Profile</a></p>
+        <div class="layout">
+            <section class="panel" aria-labelledby="experience-heading">
+                <h2 id="experience-heading">Professional experience</h2>
+                <div class="timeline">
+                    <article class="job">
+                        <h3>Career Break</h3>
+                        <p class="job-meta">September 2025 – Present</p>
+                        <p>Intentional career break to reset pace, reflect on long-term career direction, and prepare for a sustainable return to full-time platform engineering work.</p>
+                    </article>
+                    <article class="job">
+                        <h3>Site Reliability Engineer <span class="subtle">· PT. Karya Perkasa Indomitra (CFX Group)</span></h3>
+                        <p class="job-meta">Jakarta · November 2024 – August 2025</p>
+                        <p>Karya Perkasa Indomitra is an internal outsource partner helping CFX Group develop its systems.</p>
+                        <ul><li>Engineered and managed CFX Group infrastructure on AWS cloud.</li><li>Developed and implemented VPC Endpoints using AWS PrivateLink to enhance security and isolation for broker services.</li></ul>
+                        <p class="stack"><strong>Stack:</strong> Bash, Terraform, Docker, Kubernetes, Istio, GitHub Actions CI/CD, Vault, AWS (EC2, S3, EKS, ElastiCache, RDS), PostgreSQL, Git, Tailscale VPN, Datadog, Grafana, Prometheus</p>
+                    </article>
+                    <article class="job">
+                        <h3>Site Reliability Engineer <span class="subtle">· PT. Pintu Kemana Saja (Pintu)</span></h3>
+                        <p class="job-meta">Jakarta · April 2024 – November 2024</p>
+                        <p>Engineered and managed the end-to-end infrastructure for Pintu Perpetual.</p>
+                        <ul><li>Developed and deployed an ArgoCD-based CI/CD pipeline using GitHub Actions to automate microservice build, test, and deployment for Pintu Perpetual.</li><li>Architected and deployed secure, scalable AWS infrastructure, including VPCs, subnets, security groups, network ACLs, and managed EKS clusters with node autoscaling.</li><li>Built and maintained Prometheus and Grafana monitoring and observability, with custom dashboards and alerts to identify and resolve performance bottlenecks and system issues proactively.</li><li>Collaborated on reorganizing Istio gateways and streamlining documentation to reduce technical debt and improve operational efficiency.</li></ul>
+                        <p class="stack"><strong>Stack:</strong> Bash, Terraform, Docker, Kubernetes, Istio, GitLab CI/CD, Vault, AWS (EC2, S3, EKS, ElastiCache, RDS), PostgreSQL, Git, Tailscale VPN, Datadog, Grafana, Prometheus</p>
+                    </article>
+                    <article class="job">
+                        <h3>DevOps Infra Engineer <span class="subtle">· PT. Orange Inovasi Indonesia (ByOrange)</span></h3>
+                        <p class="job-meta">Jakarta · April 2023 – April 2024</p>
+                        <ul><li>Collaborated with the Information Security Team to prepare and implement swing mechanisms for Bank Indonesia regulatory compliance and ISO 27001 certification.</li><li>Supported ISO 27001 certification by managing infrastructure aspects including data backup and recovery, capacity planning, and change management.</li><li>Managed communication and collaboration with GCP and GitLab vendors to ensure seamless integration and efficient support.</li></ul>
+                        <p><strong>Achievements</strong></p>
+                        <ul><li>Implemented Workload Identity for infrastructure on/off and performance testing environments, removing stored service account credentials and reducing credential compromise risk.</li><li>Consolidated 16 product repositories into one infrastructure on/off pipeline repository with call procedures for each project, improving maintainability and reducing deployment complexity.</li><li>Worked with the Backend Infrastructure team on Google Cloud cost reduction, achieving 40% lower monthly costs through resource utilization optimization and cost-effective solutions.</li></ul>
+                    </article>
+                    <article class="job">
+                        <h3>Associate DevOps Infra Engineer <span class="subtle">· PT. Orange Inovasi Indonesia (ByOrange)</span></h3>
+                        <p class="job-meta">Jakarta · December 2020 – April 2023</p>
+                        <ul><li>Provisioned and managed infrastructure for 11 company products using Terraform and Ansible, following DRY principles with a centralized infrastructure code repository.</li><li>Designed, developed, and managed centralized CI/CD pipelines for 8 products in one repository, automating build, test, and deployment for consistent delivery.</li><li>Built a GitLab Pipeline mechanism to provision on-demand, immutable pre-production performance testing infrastructure, enabling realistic testing and improving application reliability.</li><li>Guided internal teams and stakeholders on deployment cycles and best practices for Dockerfiles, Kubernetes manifests, and Istio manifests.</li><li>Led a sister company’s GCP onboarding, including infrastructure migration and knowledge transfer.</li><li>Researched Datadog, Argo CD, and Teleport to identify improvements to development processes and infrastructure management.</li></ul>
+                        <p><strong>Achievements</strong></p>
+                        <ul><li>Migrated CI/CD tooling from on-premise Jenkins to GitLab CI/CD SaaS, coordinating stakeholders to minimize disruption and maintain project continuity.</li><li>Reduced cloud costs with time-based infrastructure scaling, using Google Cloud Scheduler to trigger GitLab pipelines and reduce unnecessary spending.</li><li>Implemented preemptible nodes for GitLab Runner and non-production environments, reducing monthly costs by 35% without affecting development velocity.</li></ul>
+                        <p class="stack"><strong>Stack:</strong> Bash, Terraform, Ansible, Docker, Kubernetes, Istio, GitLab CI/CD, Vault, GCP (GKE, GCS, GCE, Memorystore), MySQL 8 (CloudSQL), Git, Pritunl VPN, Datadog, Velero</p>
+                    </article>
+                    <article class="job">
+                        <h3>Junior Software Development Engineer <span class="subtle">· PT. Advotics Teknologi Global (Advotics)</span></h3>
+                        <p class="job-meta">Jakarta · August 2019 – December 2020</p>
+                        <ul><li>Developed product features including data visualization dashboards and reports, ETL jobs for data transformation, and integration endpoints for external services.</li><li>Maintained ETL processes by monitoring cron jobs and performing manual data manipulation as needed to ensure data accuracy and integrity.</li></ul>
+                        <p class="stack"><strong>Stack:</strong> Java 8, MySQL 5, Git, AWS RDS, AWS S3</p>
+                    </article>
+                </div>
+            </section>
 
-    </body>
+            <aside class="side">
+                <section class="panel" aria-labelledby="education-heading">
+                    <h2 id="education-heading">Education</h2>
+                    <p class="credential-title">Bachelor of Computer Engineering</p>
+                    <p class="subtle">Universitas Indonesia</p>
+                    <p class="subtle">August 2015 – August 2019</p>
+                    <p><strong>GPA:</strong> 3.32</p>
+                    <p><strong>Topics of interest</strong></p>
+                    <p class="topic-list">Software Development, Computer Networking and Security, Computer Architecture, System Architecture, Project Management</p>
+                </section>
+                <section class="panel" aria-labelledby="cert-heading">
+                    <h2 id="cert-heading">Certification</h2>
+                    <p class="credential-title">Certified Kubernetes Administrator (CKA)</p>
+                    <p class="subtle">Linux Foundation</p>
+                    <p class="subtle">October 2026 – October 2028</p>
+                    <p><strong>ID:</strong> LF-gikm7ci2o1</p>
+                </section>
+                <section class="panel" aria-labelledby="location-heading">
+                    <h2 id="location-heading">Contact</h2>
+                    <p><strong>Location</strong><br>Bekasi, Jawa Barat, Indonesia</p>
+                    <p><strong>Email</strong><br><a href="mailto:faderosyad@gmail.com">faderosyad@gmail.com</a></p>
+                    <p><strong>Profiles</strong><br><a href="{{ linkedin }}" target="_blank" rel="noopener noreferrer">linkedin.com/in/faderosyad</a><br><a href="{{ github }}" target="_blank" rel="noopener noreferrer">github.com/faderosyad</a></p>
+                </section>
+            </aside>
+        </div>
+    </main>
+    <footer>Fade Khalifah Rosyad · DevOps and Site Reliability Engineering</footer>
+</body>
 </html>
